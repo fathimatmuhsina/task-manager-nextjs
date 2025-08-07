@@ -117,7 +117,12 @@ export default function ProfilePage() {
 
         <div className="mt-10 flex justify-end space-x-4">
           <button
-            onClick={() => setShowModal(true)}
+            onClick={() => 
+            {
+              setName(user?.name || ""); // <--- Set initial value before showing modal
+              setShowModal(true);
+            }
+            }
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
             Edit name

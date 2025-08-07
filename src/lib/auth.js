@@ -1,13 +1,13 @@
-// src/lib/auth.js
+
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
-import prisma from "@/lib/prisma"; // ✅ Make sure this is correct
+import prisma from "@/lib/prisma"; 
 import bcrypt from "bcryptjs";
 
 export const authOptions = {
-  adapter: PrismaAdapter(prisma), // ✅ required for Prisma session support
+  adapter: PrismaAdapter(prisma), 
   session: {
-    strategy: "jwt", // or "database" if you're storing sessions in DB
+    strategy: "jwt", 
   },
   providers: [
     CredentialsProvider({
@@ -45,6 +45,6 @@ export const authOptions = {
     },
   },
   pages: {
-    signIn: "/login", // Customize if needed
+    signIn: "/login", 
   },
 };
